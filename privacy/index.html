@@ -31,7 +31,7 @@
     <a class="back" href="../">← Legal</a>
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: June 18, 2026. Operated by Deesca, an independent developer ("we", "us"). Contact: deescaapp@gmail.com.</p>
+      <p class="updated">Last updated: August 4, 2026. Operated by Deesca, an independent developer ("we", "us"). Contact: deescaapp@gmail.com.</p>
 
       <h2>Who we are</h2>
       <p>Deesca is a mobile app that helps couples move from conflict to clarity using AI-assisted mediation, coaching, and reflection.</p>
@@ -51,21 +51,28 @@
       <h2>Audio</h2>
       <p>Voice recordings are sent for transcription, then <strong>discarded</strong> — we do not retain the raw audio. The resulting text is stored as your session/journal content.</p>
 
-      <h2>AI &amp; sub-processors</h2>
-      <p>Your inputs are processed by third-party providers to deliver features:</p>
+      <h2>AI processing &amp; your explicit consent</h2>
+      <p>Deesca's core features work by sending the content you choose to submit to trusted third-party AI providers, which generate your guidance. <strong>Before any of your content is sent to these providers, we ask for your explicit consent inside the app</strong> — you are shown a clear disclosure of what is sent and to whom, and you must agree before Deesca proceeds. You can withdraw at any time by deleting your account (see “Your rights &amp; choices”).</p>
+      <p>What we send, and to whom:</p>
       <ul>
-        <li><strong>Supabase</strong> — database, authentication, storage, hosting.</li>
-        <li><strong>Anthropic (Claude)</strong> — text/vision reasoning.</li>
-        <li><strong>OpenAI</strong> — audio transcription.</li>
-        <li><strong>RevenueCat + Apple</strong> — subscriptions.</li>
+        <li><strong>Anthropic (“Claude”)</strong> — receives the text you type, the screenshots you upload, and the transcripts of what you say, in order to generate mediation reports, coaching replies, red-flag analyses, and cooldown reports.</li>
+        <li><strong>OpenAI</strong> — receives the voice recordings you make, solely to transcribe them into text. The audio is discarded immediately after transcription; we do not retain it.</li>
       </ul>
-      <p>These providers process data under their own terms and do not use your content to train their models for this use.</p>
+      <p>We send only the relationship content you choose to submit. We do <strong>not</strong> send your email address or other account identifiers to these AI providers, and all transmission is over encrypted connections.</p>
+      <p><strong>Equal protection.</strong> We only share your data with third parties that are contractually bound to protect it to at least the same standard described in this policy. Anthropic and OpenAI process your data under their commercial API terms, which <strong>do not use your content to train their models</strong>. Your content is never sold and is never used for advertising or cross-app tracking.</p>
+
+      <h2>Other service providers (sub-processors)</h2>
+      <ul>
+        <li><strong>Supabase</strong> — our own backend: database, authentication, storage, and hosting (your rows protected by row-level security).</li>
+        <li><strong>RevenueCat + Apple</strong> — subscription management. We never receive your full payment-card details.</li>
+      </ul>
 
       <h2>Storage, security, retention</h2>
       <p>Data is stored on Supabase with row-level security so each user can access only their own rows. We keep your data while your account is active and delete it on account deletion.</p>
 
       <h2>Your rights &amp; choices</h2>
       <ul>
+        <li><strong>AI processing consent:</strong> you agree in-app before any content is sent to our AI providers, and you can withdraw at any time by deleting your account.</li>
         <li><strong>Access/export</strong> your data: contact us.</li>
         <li><strong>Delete everything:</strong> Settings → Delete account permanently erases your account and all associated data (sessions, journals, coach memory, partner details).</li>
         <li><strong>Manage subscription:</strong> through your Apple ID settings.</li>
