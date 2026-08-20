@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join a room on Deesca</title>
+<meta name="description" content="Your partner invited you to talk something through on Deesca.">
+
+<!-- Link previews decide whether this gets tapped. A bare URL with no card looks
+     like spam in iMessage or WhatsApp, and this arrives in the most guarded
+     moment the app ever asks anyone to share. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="You've been invited to a room on Deesca">
+<meta property="og:description" content="Somebody wants to work through something with you — calmly, and with both sides heard.">
+<meta name="twitter:card" content="summary">
+
+<style>
+  :root {
+    --ground: #F6EEE2;
+    --surface: #FFFBF4;
+    --ink: #2C2521;
+    --ink-soft: #6E6055;
+    --rule: #E1D3BF;
+    --accent: #C4560F;
+    --accent-bright: #F4843C;
+    --on-accent: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #15122B;
+      --surface: #1D1938;
+      --ink: #F3EDE5;
+      --ink-soft: #A79FC4;
+      --rule: #322B5A;
+      --accent: #F4843C;
+      --accent-bright: #F4843C;
+      --on-accent: #1B1206;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+  }
+
+  main {
+    width: 100%;
+    max-width: 27rem;
+    text-align: center;
+  }
+
+  .brand {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.75rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+    text-wrap: balance;
+  }
+
+  .sub {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin: 0 0 2rem;
+    text-wrap: balance;
+  }
+
+  .code-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 1.1rem 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .code-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 0.5rem;
+  }
+  .code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    /* The trailing letter-space would push the code visually off-centre. */
+    text-indent: 0.22em;
+    margin: 0;
+    word-break: break-all;
+  }
+
+  .actions { display: flex; flex-direction: column; gap: 0.7rem; }
+
+  a.btn {
+    display: block;
+    padding: 0.95rem 1.25rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  a.primary { background: var(--accent); color: var(--on-accent); }
+  a.secondary { background: transparent; color: var(--ink); border-color: var(--rule); }
+  a.btn:focus-visible { outline: 3px solid var(--accent-bright); outline-offset: 3px; }
+
+  .note {
+    margin: 1.75rem 0 0;
+    font-size: 0.83rem;
+    color: var(--ink-soft);
+    text-wrap: balance;
+  }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <p class="brand">Deesca</p>
+
+  <h1 id="headline">You've been invited to a room</h1>
+  <p class="sub" id="sub">Someone wants to work through something with you — calmly, with both sides heard.</p>
+
+  <div class="code-card" id="codeCard">
+    <p class="code-label">Room code</p>
+    <p class="code" id="code">------</p>
+  </div>
+
+  <div class="actions">
+    <a class="btn primary" id="openApp" href="#">Open in Deesca</a>
+    <a class="btn secondary" id="getApp" href="https://apps.apple.com/app/id6780991520">Don't have Deesca? Get the app</a>
+  </div>
+
+  <p class="note">Deesca is a private space for two people to talk something through.
+  Your side stays yours — your partner never sees what you write, only the guidance you both get back.</p>
+</main>
+
+<script>
+  // Deliberately NO auto-redirect.
+  //
+  // The obvious version of this page assigns location.href to the truceful://
+  // scheme on load and races a timer to the App Store. On iOS that shows
+  // "Safari cannot open the page because the address is invalid" to precisely the
+  // people this page exists for — the ones without the app — before they read a
+  // word. A custom scheme cannot fail quietly the way a Universal Link can.
+  //
+  // So both paths are one explicit tap, and nobody sees an error. When
+  // associatedDomains + an apple-app-site-association file ship, this URL becomes
+  // a real Universal Link, the OS opens the app directly, and this page renders
+  // only for people who genuinely need the App Store.
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    // `c`, never `code` — lib/auth.tsx treats any inbound URL containing "code="
+    // as a magic link and would try to exchange a room code as a PKCE token.
+    var raw = params.get('c') || '';
+    var code = raw.trim().toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+
+    var openApp = document.getElementById('openApp');
+
+    if (code) {
+      document.getElementById('code').textContent = code;
+      openApp.setAttribute('href', 'truceful://rooms?join=' + encodeURIComponent(code));
+      return;
+    }
+
+    // No code in the link — degrade to something still useful rather than
+    // showing six dashes and a button that goes nowhere.
+    document.getElementById('headline').textContent = 'Join a room on Deesca';
+    document.getElementById('sub').textContent =
+      'This invite link is missing its room code. Ask your partner to send it again, or enter the code in the app.';
+    document.getElementById('codeCard').classList.add('hidden');
+    openApp.classList.add('hidden');
+  })();
+</script>
+</body>
+</html>
