@@ -3,27 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Join a room on Deesca</title>
-<meta name="description" content="Your partner invited you to talk something through on Deesca.">
+<title>Someone wants to sort things out · Deesca</title>
+<meta name="description" content="They've opened a private room on Deesca. You each write your side, separately, and Deesca helps turn it into something you both agree on.">
 
-<!-- Link previews decide whether this gets tapped. A bare URL with no card looks
-     like spam in iMessage or WhatsApp, and this arrives in the most guarded
-     moment the app ever asks anyone to share. -->
+<!-- Link previews decide whether this gets tapped at all. A bare URL with no card
+     looks like spam in iMessage or WhatsApp, and this arrives in the most guarded
+     message the app ever asks anyone to send. -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="You've been invited to a room on Deesca">
-<meta property="og:description" content="Somebody wants to work through something with you — calmly, and with both sides heard.">
+<meta property="og:title" content="Someone wants to sort things out with you">
+<meta property="og:description" content="A private room on Deesca. You each write your side — separately — and it helps turn that into something you both agree on.">
 <meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#F6EEE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15122B" media="(prefers-color-scheme: dark)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
 <style>
+  /* Deesca's own tokens (constants/theme.ts) — this page is the brand's first
+     impression on someone who has never seen the app, so it uses the real palette
+     rather than an approximation of it. */
   :root {
     --ground: #F6EEE2;
     --surface: #FFFBF4;
     --ink: #2C2521;
     --ink-soft: #6E6055;
-    --rule: #E1D3BF;
+    --ink-faint: #8F8175;
+    --rule: #E4D7C4;
     --accent: #C4560F;
-    --accent-bright: #F4843C;
+    --accent-soft: rgba(244, 132, 60, 0.12);
     --on-accent: #FFFFFF;
+    --shadow: 0 1px 2px rgba(44, 37, 33, .04), 0 8px 28px rgba(44, 37, 33, .07);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -31,118 +42,180 @@
       --surface: #1D1938;
       --ink: #F3EDE5;
       --ink-soft: #A79FC4;
+      --ink-faint: #857CA3;
       --rule: #322B5A;
       --accent: #F4843C;
-      --accent-bright: #F4843C;
+      --accent-soft: rgba(244, 132, 60, 0.14);
       --on-accent: #1B1206;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 10px 32px rgba(0, 0, 0, .32);
     }
   }
 
   * { box-sizing: border-box; }
-
   html, body { height: 100%; }
 
   body {
     margin: 0;
     background: var(--ground);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+    padding: 32px 22px calc(32px + env(safe-area-inset-bottom));
   }
 
   main {
     width: 100%;
-    max-width: 27rem;
+    max-width: 26.5rem;
+    /* One soft entrance, once. Anything more on a page this consequential reads as
+       marketing rather than a message from someone you know. */
+    animation: rise .5s cubic-bezier(.2, .7, .3, 1) both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    main { animation: none; }
+  }
+
+  .wordmark {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    margin: 0 0 2.25rem;
     text-align: center;
   }
 
-  .brand {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 1.75rem;
-  }
-
   h1 {
-    font-size: 1.6rem;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.5rem, 6.5vw, 1.85rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
     font-weight: 700;
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.7rem;
+    text-align: center;
     text-wrap: balance;
   }
 
-  .sub {
+  .lede {
     color: var(--ink-soft);
-    font-size: 1rem;
-    margin: 0 0 2rem;
+    margin: 0 0 1.9rem;
+    text-align: center;
     text-wrap: balance;
   }
 
+  /* The code is the one concrete artefact on the page — treat it as the object it
+     is, not as a line of text. */
   .code-card {
     background: var(--surface);
     border: 1px solid var(--rule);
-    border-radius: 14px;
-    padding: 1.1rem 1rem 1.25rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 1.15rem 1rem 1.3rem;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
   .code-label {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin: 0 0 0.5rem;
+    color: var(--ink-faint);
+    margin: 0 0 0.6rem;
   }
   .code {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 2rem;
+    font-size: 2.05rem;
     font-weight: 600;
-    letter-spacing: 0.22em;
-    /* The trailing letter-space would push the code visually off-centre. */
-    text-indent: 0.22em;
+    letter-spacing: 0.2em;
+    /* The trailing letter-space would shift the code visually off-centre. */
+    text-indent: 0.2em;
+    font-variant-numeric: tabular-nums;
     margin: 0;
     word-break: break-all;
   }
 
-  .actions { display: flex; flex-direction: column; gap: 0.7rem; }
+  .actions { display: flex; flex-direction: column; gap: 0.65rem; }
 
   a.btn {
     display: block;
-    padding: 0.95rem 1.25rem;
+    padding: 1rem 1.25rem;
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 600;
+    text-align: center;
     text-decoration: none;
     border: 1px solid transparent;
+    transition: transform .12s ease, opacity .12s ease;
   }
-  a.primary { background: var(--accent); color: var(--on-accent); }
+  a.btn:active { transform: scale(.985); }
+  a.primary { background: var(--accent); color: var(--on-accent); box-shadow: var(--shadow); }
   a.secondary { background: transparent; color: var(--ink); border-color: var(--rule); }
-  a.btn:focus-visible { outline: 3px solid var(--accent-bright); outline-offset: 3px; }
-
-  .note {
-    margin: 1.75rem 0 0;
-    font-size: 0.83rem;
-    color: var(--ink-soft);
-    text-wrap: balance;
+  a.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    a.btn { transition: none; }
+    a.btn:active { transform: none; }
   }
+
+  /* The reassurance block. Someone receiving "let's resolve our argument in an app"
+     is entitled to wonder whether they're being monitored — say plainly that they
+     aren't, before they're asked to install anything. */
+  .assurances {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .assurances li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .tick {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+  .assurances b { color: var(--ink); font-weight: 600; }
+
+  .foot {
+    margin: 1.75rem 0 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+  .foot a { color: var(--ink-faint); }
 
   .hidden { display: none !important; }
 </style>
 </head>
 <body>
 <main>
-  <p class="brand">Deesca</p>
+  <p class="wordmark">deesca</p>
 
-  <h1 id="headline">You've been invited to a room</h1>
-  <p class="sub" id="sub">Someone wants to work through something with you — calmly, with both sides heard.</p>
+  <h1 id="headline">Someone wants to sort things out with you</h1>
+  <p class="lede" id="lede">
+    They've opened a private room. You each write your side — separately — and Deesca
+    helps turn that into something you both actually agree on.
+  </p>
 
   <div class="code-card" id="codeCard">
     <p class="code-label">Room code</p>
@@ -151,30 +224,46 @@
 
   <div class="actions">
     <a class="btn primary" id="openApp" href="#">Open in Deesca</a>
-    <a class="btn secondary" id="getApp" href="https://apps.apple.com/app/id6780991520">Don't have Deesca? Get the app</a>
+    <a class="btn secondary" id="getApp" href="https://apps.apple.com/app/id6780991520">Get Deesca — free</a>
   </div>
 
-  <p class="note">Deesca is a private space for two people to talk something through.
-  Your side stays yours — your partner never sees what you write, only the guidance you both get back.</p>
+  <ul class="assurances">
+    <li>
+      <span class="tick" aria-hidden="true">✓</span>
+      <span><b>Your side stays yours.</b> They never see what you write — only the guidance you both get back.</span>
+    </li>
+    <li>
+      <span class="tick" aria-hidden="true">✓</span>
+      <span><b>Nobody is being monitored.</b> A room is one conversation, opened on purpose, that either of you can leave.</span>
+    </li>
+    <li>
+      <span class="tick" aria-hidden="true">✓</span>
+      <span><b>About five minutes.</b> You'll sign in with your own account, write your side, and that's it.</span>
+    </li>
+  </ul>
+
+  <p class="foot">
+    <a href="https://uboz7kan.github.io/deesca-legal/privacy/">Privacy Policy</a>
+  </p>
 </main>
 
 <script>
   // Deliberately NO auto-redirect.
   //
-  // The obvious version of this page assigns location.href to the truceful://
-  // scheme on load and races a timer to the App Store. On iOS that shows
-  // "Safari cannot open the page because the address is invalid" to precisely the
-  // people this page exists for — the ones without the app — before they read a
-  // word. A custom scheme cannot fail quietly the way a Universal Link can.
+  // The obvious version assigns location.href to the truceful:// scheme on load and
+  // races a timer to the App Store. On iOS that shows "Safari cannot open the page
+  // because the address is invalid" to precisely the people this page exists for —
+  // the ones without the app — before they read a word. A custom scheme cannot fail
+  // quietly the way a Universal Link can. So both paths are one explicit tap and
+  // nobody sees an error.
   //
-  // So both paths are one explicit tap, and nobody sees an error. When
-  // associatedDomains + an apple-app-site-association file ship, this URL becomes
-  // a real Universal Link, the OS opens the app directly, and this page renders
-  // only for people who genuinely need the App Store.
+  // Once associatedDomains + an apple-app-site-association file ship (a binary
+  // change), this URL becomes a real Universal Link: iOS opens the app directly and
+  // this page renders only for people who genuinely need the App Store.
   (function () {
     var params = new URLSearchParams(window.location.search);
-    // `c`, never `code` — lib/auth.tsx treats any inbound URL containing "code="
-    // as a magic link and would try to exchange a room code as a PKCE token.
+    // `c`, never `code` — lib/auth.tsx treats any inbound URL containing "code=" as
+    // a magic link and would try to exchange a room code as a PKCE token.
     var raw = params.get('c') || '';
     var code = raw.trim().toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
 
@@ -186,11 +275,11 @@
       return;
     }
 
-    // No code in the link — degrade to something still useful rather than
-    // showing six dashes and a button that goes nowhere.
+    // No code in the link — degrade to something still useful rather than six
+    // dashes above a button that goes nowhere.
     document.getElementById('headline').textContent = 'Join a room on Deesca';
-    document.getElementById('sub').textContent =
-      'This invite link is missing its room code. Ask your partner to send it again, or enter the code in the app.';
+    document.getElementById('lede').textContent =
+      'This invite link is missing its room code. Ask them to send it again, or enter the code in the app.';
     document.getElementById('codeCard').classList.add('hidden');
     openApp.classList.add('hidden');
   })();
