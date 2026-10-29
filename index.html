@@ -3,293 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Deesca · Stop having the same fight</title>
-<meta name="description" content="Deesca is a relationship coach and mediator for couples. Put both sides in and get back what each of you needs, where you already agree, and one next step.">
-
-<!-- This used to be a bare "Legal & Support" index. It is now the page a program
-     form, a press mail or a bio link lands on, so it says what Deesca is first and
-     keeps the legal/support links (App Store requires them) in the footer. -->
+<title>Deesca: AI Relationship Coach &amp; Mediator for Couples</title>
+<meta name="description" content="Deesca is a relationship coach and mediator for couples. Put both sides of a fight in and get what each of you needs, your common ground and one next step. Free to try on iPhone.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://deesca.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Deesca">
 <meta property="og:title" content="Deesca · Stop having the same fight">
 <meta property="og:description" content="Both sides in. One fair plan out. A relationship coach and mediator for couples, on iPhone.">
-<!-- Absolute, because link previews don't resolve relative paths. Move these with
-     the domain if it ever changes (docs/CNAME). -->
-<link rel="canonical" href="https://deesca.com/">
 <meta property="og:url" content="https://deesca.com/">
 <meta property="og:image" content="https://deesca.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Deesca: Stop having the same fight. A relationship coach and mediator for couples, on iPhone.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6780991520">
 <meta name="theme-color" content="#F6EEE2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#15122B" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="img/mark.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-
-<style>
-  /* Deesca's own tokens (constants/theme.ts), same as join/. */
-  :root {
-    --ground: #F6EEE2;
-    --surface: #FFFBF4;
-    --ink: #2C2521;
-    --ink-soft: #6E6055;
-    --ink-faint: #8F8175;
-    --rule: #E4D7C4;
-    --accent: #C4560F;
-    --accent-bright: #F4843C;
-    --accent-soft: rgba(244, 132, 60, 0.12);
-    --on-accent: #FFFFFF;
-    --shadow: 0 1px 2px rgba(44, 37, 33, .04), 0 12px 36px rgba(44, 37, 33, .09);
+<link rel="icon" href="/img/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/img/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/img/hero-treaty.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Deesca",
+  "alternateName": "Relationship Coach: Deesca",
+  "description": "A relationship coach and mediator for couples. Put both sides of an argument in and get back what each of you needs, your common ground, and one next step. Includes a Relationship Coach that remembers your story, a Red Flag Check for chat screenshots, and a Daily Reflection.",
+  "url": "https://deesca.com/",
+  "downloadUrl": "https://apps.apple.com/app/id6780991520",
+  "installUrl": "https://apps.apple.com/app/id6780991520",
+  "operatingSystem": "iOS 15.1 or later",
+  "applicationCategory": "LifestyleApplication",
+  "inLanguage": [
+    "en",
+    "de",
+    "es",
+    "fr",
+    "it",
+    "pt",
+    "tr"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free to try; Premium is an optional subscription."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deesca",
+    "url": "https://deesca.com/"
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ground: #15122B;
-      --surface: #1F1B3A;
-      --ink: #F3EEFF;
-      --ink-soft: #B9B0D6;
-      --ink-faint: #8C84AD;
-      --rule: #2E2952;
-      --accent: #F4843C;
-      --accent-bright: #F4843C;
-      --accent-soft: rgba(244, 132, 60, 0.16);
-      --shadow: 0 1px 2px rgba(0, 0, 0, .2), 0 12px 36px rgba(0, 0, 0, .35);
-    }
-  }
-
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--ground);
-    color: var(--ink);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); }
-  img { display: block; max-width: 100%; height: auto; }
-
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
-
-  header.top { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--accent); font-weight: 700; font-size: 20px; letter-spacing: .5px; }
-  .brand img { width: 30px; height: 30px; }
-
-  .cta {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: linear-gradient(135deg, var(--accent-bright), #DA631C);
-    color: var(--on-accent); text-decoration: none; font-weight: 600;
-    padding: 14px 24px; border-radius: 999px; font-size: 16px;
-    box-shadow: 0 8px 24px rgba(218, 99, 28, .28);
-  }
-  .cta.small { padding: 10px 18px; font-size: 14px; box-shadow: none; }
-
-  .hero { display: grid; gap: 40px; align-items: center; padding: 32px 0 64px; }
-  .kicker { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; }
-  h1 { font-size: clamp(40px, 7vw, 64px); line-height: 1.04; letter-spacing: -1.8px; margin: 18px 0 18px; font-weight: 800; }
-  h1 em { font-style: normal; color: var(--accent-bright); }
-  .lede { font-size: 19px; color: var(--ink-soft); max-width: 30em; margin: 0 0 28px; }
-  .note { font-size: 14px; color: var(--ink-faint); margin-top: 14px; }
-
-  /* The shots are the App Store frames, whose top fifth is a baked-in kicker and
-     headline that repeat the HTML right next to them. Crop to the phone. */
-  .shot { border-radius: 28px; box-shadow: var(--shadow); width: 100%; max-width: 340px; margin: 0 auto; aspect-ratio: 720 / 1230; object-fit: cover; object-position: 50% 100%; }
-
-  section.feature { display: grid; gap: 32px; align-items: center; padding: 56px 0; border-top: 1px solid var(--rule); }
-  .feature h2 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.1; letter-spacing: -1px; margin: 12px 0 14px; font-weight: 800; }
-  .feature p { color: var(--ink-soft); font-size: 17px; margin: 0 0 12px; max-width: 30em; }
-
-  .more { display: grid; gap: 16px; padding: 56px 0; border-top: 1px solid var(--rule); }
-  .more h2 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.8px; margin: 0 0 8px; font-weight: 800; }
-  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 20px; padding: 22px; }
-  .card h3 { margin: 0 0 6px; font-size: 18px; }
-  .card p { margin: 0; color: var(--ink-soft); font-size: 15px; }
-
-  .about { padding: 56px 0; border-top: 1px solid var(--rule); }
-  .about .text { max-width: 640px; }
-  .about h2 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.8px; margin: 12px 0 18px; font-weight: 800; }
-  .about p { color: var(--ink-soft); font-size: 17px; margin: 0 0 16px; }
-  .about .sign { color: var(--ink); font-weight: 600; margin-top: 24px; }
-  .about .contact { font-size: 15px; color: var(--ink-faint); }
-
-  .faq { padding: 56px 0; border-top: 1px solid var(--rule); }
-  .faq h2 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.8px; margin: 0 0 20px; font-weight: 800; }
-  .faq .list { display: grid; gap: 10px; max-width: 760px; }
-  .faq details { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; }
-  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 18px 20px; font-weight: 600; font-size: 16px; }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; color: var(--accent); font-weight: 700; font-size: 20px; line-height: 1; flex-shrink: 0; }
-  .faq details[open] summary::after { content: "\2212"; }
-  .faq details p { margin: 0; padding: 0 20px 18px; color: var(--ink-soft); font-size: 15px; }
-  .faq details p + p { padding-top: 0; margin-top: -6px; }
-
-  .closing { text-align: center; padding: 64px 0; border-top: 1px solid var(--rule); }
-  .closing h2 { font-size: clamp(28px, 5vw, 44px); letter-spacing: -1px; margin: 0 0 22px; font-weight: 800; }
-
-  footer { border-top: 1px solid var(--rule); padding: 32px 0 48px; color: var(--ink-faint); font-size: 13px; }
-  footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 14px; }
-  footer nav a { color: var(--ink-soft); text-decoration: none; font-weight: 500; font-size: 14px; }
-  footer p { margin: 6px 0; max-width: 46em; }
-
-  @media (min-width: 820px) {
-    .hero { grid-template-columns: 1.15fr 1fr; padding: 48px 0 88px; }
-    section.feature { grid-template-columns: 1fr 1fr; gap: 64px; }
-    section.feature.flip .text { order: 2; }
-    .more .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  }
-  @media (max-width: 819px) {
-    .more .grid { display: grid; gap: 12px; }
-    header.top .cta { display: none; }
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <header class="top">
-    <a class="brand" href="./"><img src="img/mark.png" alt="" width="30" height="30">Deesca</a>
-    <a class="cta small" href="https://apps.apple.com/app/id6780991520">Get the app</a>
-  </header>
-
-  <main>
-    <div class="hero">
-      <div>
-        <span class="kicker">Relationship coach &amp; mediator</span>
-        <h1>Stop having <em>the same fight.</em></h1>
-        <p class="lede">Put both sides in, typed or spoken, and get back what each of you actually needs, where you already agree, and the one next step.</p>
-        <a class="cta" href="https://apps.apple.com/app/id6780991520">Download on the App Store</a>
-        <p class="note">Free to try on iPhone. Available in 7 languages.</p>
-      </div>
-      <img class="shot" src="img/shot-01.webp" width="720" height="1564" alt="Deesca home screen with the Mediator, Relationship Coach, Daily Reflection and Red Flag Check">
-    </div>
-
-    <section class="feature">
-      <div class="text">
-        <span class="kicker">The Mediator</span>
-        <h2>Both sides in. One fair plan out.</h2>
-        <p>Each of you writes your side, or you invite your partner into a shared room with a code. Deesca returns a structured Peace Treaty: what each of you really feels, the common ground you already share, and a specific next step.</p>
-        <p>Not an opinion. Not someone taking sides.</p>
-      </div>
-      <img class="shot" src="img/shot-02.webp" width="720" height="1564" alt="A Peace Treaty showing tension, objectivity and resolution scores and the couple's common ground" loading="lazy">
-    </section>
-
-    <section class="feature flip">
-      <div class="text">
-        <span class="kicker">Relationship Coach</span>
-        <h2>It won't just take your side.</h2>
-        <p>Your coach remembers your story, so you never re-explain years of context to ask about one week. Talk it through, rehearse the hard conversation, and hear what you might have missed.</p>
-      </div>
-      <img class="shot" src="img/shot-03.webp" width="720" height="1564" alt="A conversation with the Relationship Coach after a mediation" loading="lazy">
-    </section>
-
-    <section class="more">
-      <h2>And the quiet part</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Red Flag Check</h3>
-          <p>Share a chat screenshot and see what's happening in it, named plainly, with a healthier way to answer.</p>
-        </div>
-        <div class="card">
-          <h3>Daily Reflection</h3>
-          <p>A one-tap mood check-in and a few lines about your day. Your coach reads it, so the advice keeps up with you.</p>
-        </div>
-        <div class="card">
-          <h3>Progress you can see</h3>
-          <p>Recovery time, resolution quality and how the two of you are trending, plus breathing sessions for the moment before you reply.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- The founder's own words, approved by the founder on 2026-10-29. Don't polish it into
-         marketing copy, and don't name the Coach or Mediator here: the sections above
-         already do, and this has to read as a person, not a pitch. -->
-    <section class="about" id="about">
-      <div class="text">
-        <span class="kicker">About</span>
-        <h2>Why Deesca exists</h2>
-        <p>There are moments in every relationship when you can't make the other person understand you. You feel stuck. You want to fix it, but in that moment you can't step outside of it. What you need is someone who sees both sides without taking one.</p>
-        <p>Those moments are hard to share. Friends pick a side, family worries, and some things you'd rather not say out loud at all.</p>
-        <p>And sometimes it isn't about one fight. You just need someone who knows the whole story. Someone you can tell everything to, without starting from the beginning or worrying how it sounds.</p>
-        <p>I built Deesca because I've been there, more times than I'd like. It's the calm third voice I wished I'd had: one that listens to both of you when you're stuck, and remembers your story when you just need to talk.</p>
-        <p class="sign">— Utku, founder</p>
-        <p class="contact">Questions or feedback? Write to me at <a href="mailto:deescaapp@gmail.com">deescaapp@gmail.com</a>.</p>
-      </div>
-    </section>
-
-    <!-- Keep these answers in step with the FAQPage JSON-LD at the bottom of the page
-         and with privacy/. Nothing here may promise more than the policy does: no
-         end-to-end encryption, no zero retention. Prices stay in the app (local
-         currency, set in App Store Connect), never hardcoded here. -->
-    <section class="faq" id="faq">
-      <h2>Questions people ask</h2>
-      <div class="list">
-        <details>
-          <summary>How does it work?</summary>
-          <p>Write or speak your side of what happened. Add your partner's side yourself, or invite them into a shared room with a six-character code so they can write their own. A few moments later you get a Peace Treaty: what each of you is really asking for, the ground you already share, and one specific next step.</p>
-        </details>
-        <details>
-          <summary>Does my partner have to use it too?</summary>
-          <p>No. The Coach, the Red Flag Check and the Daily Reflection are just for you, and you can describe both sides in the Mediator yourself. A shared room is optional. If you open one, your partner joins on their own iPhone with their own account.</p>
-        </details>
-        <details>
-          <summary>Can my partner see what I write?</summary>
-          <p>No. In a shared room, each of you writes privately. Neither of you sees the other's words, only the guidance you both get back. Either of you can leave the room at any time.</p>
-        </details>
-        <details>
-          <summary>Who can read my conversations?</summary>
-          <p>Only you, from your account. Your sessions are stored so that only your account can open them. To write your guidance, the text you send goes to Anthropic's Claude, and voice notes go to OpenAI to be turned into text. Both work under terms that don't let them train their models on your content. Your email address isn't sent to either of them, and we don't keep the audio once it has been transcribed.</p>
-          <p>We don't sell your data or use it for ads. The details are in the <a href="privacy/">Privacy Policy</a>.</p>
-        </details>
-        <details>
-          <summary>Will it just tell me I'm right?</summary>
-          <p>No, and that's the point. Deesca looks at both sides with the same care, names what each of you might be missing, and avoids picking a winner. If you only want someone to agree with you, it will disappoint you a little.</p>
-        </details>
-        <details>
-          <summary>Is this therapy?</summary>
-          <p>No. Deesca is supportive coaching and reflection, not a therapist, and it doesn't diagnose anyone. It can help you understand an argument and plan the next conversation. If you feel unsafe or are in crisis, contact your local emergency services or a qualified professional.</p>
-        </details>
-        <details>
-          <summary>What can I do for free?</summary>
-          <p>You can try one mediation, three messages with your Coach and one Red Flag Check. The Daily Reflection, mood tracking and breathing sessions stay free. Premium unlocks everything else, without limits. You'll see the price in your own currency in the app before you pay.</p>
-        </details>
-        <details>
-          <summary>How do I cancel?</summary>
-          <p>In the app, open Settings and choose Manage subscription. You can also go to iPhone Settings, tap your name, then Subscriptions. Apple handles the billing, so cancelling takes a few taps and you keep Premium until the end of the period you paid for.</p>
-        </details>
-        <details>
-          <summary>Can I delete everything?</summary>
-          <p>Yes. Go to Settings and tap Delete account. This permanently erases your account and everything in it: sessions, reflections, your Coach's memory and your partner's details.</p>
-        </details>
-        <details>
-          <summary>Which languages and devices?</summary>
-          <p>Deesca is on iPhone in English, German, Spanish, French, Italian, Portuguese and Turkish. It follows your phone's language, and you can change it in Settings.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="closing">
-      <h2>Finish the argument<br>instead of repeating it.</h2>
-      <a class="cta" href="https://apps.apple.com/app/id6780991520">Download on the App Store</a>
-    </section>
-  </main>
-
-  <footer>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a href="support/">Support</a>
-      <a href="privacy/">Privacy Policy</a>
-      <a href="terms/">Terms of Use</a>
-      <a href="mailto:deescaapp@gmail.com">deescaapp@gmail.com</a>
-    </nav>
-    <p>Deesca offers supportive, constructive relationship coaching and reflection. It is not a substitute for professional legal advice or psychological therapy, and its insights are estimates meant to help you reflect, not verdicts.</p>
-    <p>© 2026 Deesca</p>
-  </footer>
-
-</div>
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Deesca",
+  "url": "https://deesca.com/",
+  "logo": "https://deesca.com/img/apple-touch-icon.png",
+  "email": "deescaapp@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Utku"
+  },
+  "sameAs": [
+    "https://apps.apple.com/app/id6780991520"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Deesca",
+  "url": "https://deesca.com/"
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -301,6 +96,38 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Write or speak your side of what happened. Add your partner's side yourself, or invite them into a shared room with a six-character code so they can write their own. A few moments later you get a Peace Treaty: what each of you is really asking for, the ground you already share, and one specific next step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an app for relationship problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Deesca is a relationship app for couples, built for the moments you keep getting stuck: the argument that keeps coming back, the message you don't know how to answer, the conversation you can't find words for. You can use it on your own or together with your partner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Deesca a relationship mediator app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Mediator takes both sides of an argument, from you alone or from both of you in a private shared room, and turns them into a Peace Treaty: what each of you needs, your common ground and one next step. It works any time, from your phone. It isn't a trained human mediator, and it isn't for legal or divorce mediation. How it works."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an app replace couples counseling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and it shouldn't try to. Deesca helps with everyday conflict and communication, before or between counseling sessions. If problems have lasted a long time, after a betrayal, or if there's fear in the relationship, a couples counselor is the right choice, and some couples use both. Our guide Do we need couples counseling? can help you decide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work for married couples?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Deesca is for any couple: dating, living together or married. Because the Coach remembers your story, it suits the long-running patterns that marriages often have."
       }
     },
     {
@@ -378,5 +205,378 @@
   ]
 }
 </script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/mark.png" alt="" width="32" height="23">Deesca</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#how">How it works</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#about">About</a>
+      <a href="/#faq">FAQ</a>
+      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6780991520">Get the app</a>
+    </nav>
+    <details class="menu">
+      <summary aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="menu-panel">
+        <a href="/#how">How it works</a>
+        <a href="/guides/">Guides</a>
+        <a href="/#about">About</a>
+        <a href="/#faq">FAQ</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6780991520">Get the app</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="mesh" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Relationship coach &amp; mediator</span>
+        <h1>Stop having <span class="grad">the same fight.</span></h1>
+        <p class="lede">Deesca is a relationship mediator and coach for couples. Put both sides in, typed or spoken, and get back what each of you actually needs, where you already agree, and one next step you can take tonight.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6780991520">Download on the App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="trust">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free to try on iPhone</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Takes no sides</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>7 languages</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="float float-a" aria-hidden="true">
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M21 19v-1a4 4 0 0 0-3-3.9M15.5 4.2a3.5 3.5 0 0 1 0 6.6"/></svg></i>
+          <span>Both sides heard<small>Peace Treaty ready</small></span>
+        </div>
+        <div class="stage stage--violet">
+          <img src="/img/hero-treaty.webp" width="720" height="1230" alt="A Peace Treaty in Deesca, with tension, objectivity and resolution scores and the common ground both partners share" fetchpriority="high">
+        </div>
+        <div class="float float-b" aria-hidden="true">
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>
+          <span>One next step<small>Not another opinion</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>From the same fight to one next step.</h2>
+        <p>Most arguments come back because the real issue never gets said. Deesca works like a relationship mediator in your pocket: it slows the conversation down and puts what matters on the table, for both of you.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>Tell your side</h3>
+          <p>Type it, or speak it if that's easier. Say it the way you'd tell a friend. Nobody is grading you.</p>
+        </li>
+        <li class="step">
+          <h3>Add their side</h3>
+          <p>Write what you think they'd say, or invite your partner into a shared room with a six-character code so they can write their own, privately.</p>
+        </li>
+        <li class="step">
+          <h3>Get your Peace Treaty</h3>
+          <p>What each of you really needs, the common ground you already share, and one specific next step. No winner, no blame.</p>
+        </li>
+      </ol>
+      <p class="btn-note" style="margin-top: 22px; font-size: 16px;"><a href="/relationship-mediator/">How online relationship mediation works →</a></p>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="features">
+    <div class="wrap">
+      <div class="feature tone-violet">
+        <div class="feature-text">
+          <span class="eyebrow">Relationship Coach</span>
+          <h2>Someone who already knows the whole story.</h2>
+          <p>Your coach remembers past sessions and your daily reflections, so you never start from the beginning. Talk through a hard week, work on how the two of you communicate, rehearse a difficult conversation, or say the thing you can't say out loud yet.</p>
+          <ul class="ticks">
+            <li>Remembers your story between sessions</li>
+            <li>Tells you what you might be missing, kindly</li>
+            <li>Type or speak, whenever you need it</li>
+          </ul>
+        </div>
+        <div class="stage stage--ivory">
+          <img src="/img/feat-coach.webp" width="760" height="1329" alt="A conversation with the Relationship Coach, which refers back to an earlier mediation" loading="lazy">
+        </div>
+      </div>
+
+      <div class="feature flip tone-rose">
+        <div class="feature-text">
+          <span class="eyebrow">Red Flag Check</span>
+          <h2>See what's really going on in that chat.</h2>
+          <p>Share a screenshot or paste the words. Deesca names the patterns plainly, like guilt-tripping or blame-shifting, and gives you three calm ways to reply.</p>
+          <ul class="ticks">
+            <li>Patterns named in plain language</li>
+            <li>Three replies you could actually send</li>
+            <li>Works on screenshots or your own words</li>
+          </ul>
+        </div>
+        <div class="stage stage--ivory">
+          <img src="/img/feat-redflag.webp" width="760" height="1329" alt="A Red Flag Check naming guilt-tripping, silent treatment, passive-aggression and blame-shifting, with a tactics radar" loading="lazy">
+        </div>
+      </div>
+
+      <div class="duo">
+        <div class="tile tone-sky">
+          <div class="tile-text">
+            <span class="eyebrow">Daily Reflection</span>
+            <h3>Small check-ins, big shifts.</h3>
+            <p>One tap for today's mood and a few lines about your day. Your coach reads them, so the advice keeps up with you.</p>
+          </div>
+          <div class="tile-img"><img src="/img/feat-reflection.webp" width="760" height="1329" alt="The Daily Reflection calendar with a mood for each day" loading="lazy"></div>
+        </div>
+        <div class="tile tone-sage">
+          <div class="tile-text">
+            <span class="eyebrow">Progress</span>
+            <h3>Watch things get better.</h3>
+            <p>Recovery time, resolution quality and how your moods move over the weeks, plus breathing sessions for the moment before you reply.</p>
+          </div>
+          <div class="tile-img"><img src="/img/feat-progress.webp" width="760" height="1329" alt="Progress charts showing recovery time, days together and resolution quality" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="wrap">
+      <div class="band glow">
+        <div class="section-head">
+          <span class="eyebrow">Private by design</span>
+          <h2>Your side stays yours.</h2>
+          <p>A hard conversation needs a safe place to happen. Here is what that means in practice.</p>
+        </div>
+        <!-- Every line here must stay within privacy/. No end-to-end encryption,
+             no zero retention, no "deleted immediately". -->
+        <ul class="promises">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            <h3>Your partner never sees your words</h3>
+            <p>In a shared room, each of you writes privately. You both see only the guidance that comes back.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.3-4.4"/></svg>
+            <h3>Not used to train AI</h3>
+            <p>Your words go to Anthropic's Claude, and voice notes to OpenAI for transcription, under terms that don't let them train on your content. We never sell your data or use it for ads.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13M10 11v5M14 11v5"/></svg>
+            <h3>Delete everything, anytime</h3>
+            <p>One tap in Settings permanently erases your account, your sessions, your reflections and your coach's memory.</p>
+          </li>
+        </ul>
+        <p class="band-foot">The details are in our <a href="/privacy/">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="guides">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Guides</span>
+        <h2>For the argument you're in right now.</h2>
+        <p>Practical, short reads on communication, conflict and the relationship problems that are hard to talk about. No jargon and no taking sides.</p>
+      </div>
+      <div class="cards two">
+      <a class="card" href="/guides/red-flags-in-texts/">
+        <span class="kind">Guide</span>
+        <h3>Red flags in texts: 9 patterns to notice</h3>
+        <p>What guilt-tripping, gaslighting and the silent treatment look like in a chat, and how to reply calmly.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="card" href="/guides/how-to-stop-fighting-with-your-partner/">
+        <span class="kind">Guide</span>
+        <h3>How to stop fighting with your partner</h3>
+        <p>Why the same argument keeps coming back, and five steps to break the loop.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="card" href="/guides/how-to-communicate-with-your-partner/">
+        <span class="kind">Guide</span>
+        <h3>How to communicate with your partner without fighting</h3>
+        <p>How to bring things up, listen so they feel heard, and what to do when they shut down.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="card" href="/guides/what-to-say-after-a-fight/">
+        <span class="kind">Guide</span>
+        <h3>What to say after a fight with your partner</h3>
+        <p>Words for the first conversation after a fight, including over text, and the lines that restart it.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="card" href="/guides/do-we-need-couples-counseling/">
+        <span class="kind">Guide</span>
+        <h3>Do we need couples counseling? 8 signs</h3>
+        <p>When counseling is the right call, how it differs from therapy, and what to try first.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="card" href="/guides/ai-relationship-advice/">
+        <span class="kind">Guide</span>
+        <h3>AI relationship advice: what it can and can't do</h3>
+        <p>The kinds of AI apps for couples, how they differ from ChatGPT and therapy, and how to choose one.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The founder's own words, approved by the founder on 2026-10-29. Don't polish
+       it into marketing copy, and don't name the Coach or Mediator here: the sections
+       above already do, and this has to read as a person, not a pitch. -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <article class="letter">
+        <span class="eyebrow">About</span>
+        <h2>Why Deesca exists</h2>
+        <p>There are moments in every relationship when you can't make the other person understand you. You feel stuck. You want to fix it, but in that moment you can't step outside of it. What you need is someone who sees both sides without taking one.</p>
+        <p>Those moments are hard to share. Friends pick a side, family worries, and some things you'd rather not say out loud at all.</p>
+        <p>And sometimes it isn't about one fight. You just need someone who knows the whole story. Someone you can tell everything to, without starting from the beginning or worrying how it sounds.</p>
+        <p>I built Deesca because I've been there, more times than I'd like. It's the calm third voice I wished I'd had: one that listens to both of you when you're stuck, and remembers your story when you just need to talk.</p>
+        <div class="sign">
+          <img src="/img/mark.png" alt="" width="44" height="32">
+          <div>
+            <b>— Utku, founder</b>
+            <span>Questions or feedback? Write to me at <a href="mailto:deescaapp@gmail.com">deescaapp@gmail.com</a>.</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Nothing in the FAQ may promise more than privacy/ does: no end-to-end
+       encryption, no zero retention. No prices: they differ per country and change
+       in App Store Connect. The FAQPage structured data is generated from this list. -->
+  <section class="section section--tint" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions people ask</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How does it work?</summary>
+          <p>Write or speak your side of what happened. Add your partner's side yourself, or invite them into a shared room with a six-character code so they can write their own. A few moments later you get a Peace Treaty: what each of you is really asking for, the ground you already share, and one specific next step.</p>
+        </details>
+        <details>
+          <summary>Is there an app for relationship problems?</summary>
+          <p>Yes. Deesca is a relationship app for couples, built for the moments you keep getting stuck: the argument that keeps coming back, the message you don't know how to answer, the conversation you can't find words for. You can use it on your own or together with your partner.</p>
+        </details>
+        <details>
+          <summary>Is Deesca a relationship mediator app?</summary>
+          <p>Yes. The Mediator takes both sides of an argument, from you alone or from both of you in a private shared room, and turns them into a Peace Treaty: what each of you needs, your common ground and one next step. It works any time, from your phone. It isn't a trained human mediator, and it isn't for legal or divorce mediation. <a href="/relationship-mediator/">How it works</a>.</p>
+        </details>
+        <details>
+          <summary>Can an app replace couples counseling?</summary>
+          <p>No, and it shouldn't try to. Deesca helps with everyday conflict and communication, before or between counseling sessions. If problems have lasted a long time, after a betrayal, or if there's fear in the relationship, a couples counselor is the right choice, and some couples use both. Our guide <a href="/guides/do-we-need-couples-counseling/">Do we need couples counseling?</a> can help you decide.</p>
+        </details>
+        <details>
+          <summary>Does it work for married couples?</summary>
+          <p>Yes. Deesca is for any couple: dating, living together or married. Because the Coach remembers your story, it suits the long-running patterns that marriages often have.</p>
+        </details>
+        <details>
+          <summary>Does my partner have to use it too?</summary>
+          <p>No. The Coach, the Red Flag Check and the Daily Reflection are just for you, and you can describe both sides in the Mediator yourself. A shared room is optional. If you open one, your partner joins on their own iPhone with their own account.</p>
+        </details>
+        <details>
+          <summary>Can my partner see what I write?</summary>
+          <p>No. In a shared room, each of you writes privately. Neither of you sees the other's words, only the guidance you both get back. Either of you can leave the room at any time.</p>
+        </details>
+        <details>
+          <summary>Who can read my conversations?</summary>
+          <p>Only you, from your account. Your sessions are stored so that only your account can open them. To write your guidance, the text you send goes to Anthropic's Claude, and voice notes go to OpenAI to be turned into text. Both work under terms that don't let them train their models on your content. Your email address isn't sent to either of them, and we don't keep the audio once it has been transcribed.</p>
+          <p>We don't sell your data or use it for ads. The details are in the <a href="/privacy/">Privacy Policy</a>.</p>
+        </details>
+        <details>
+          <summary>Will it just tell me I'm right?</summary>
+          <p>No, and that's the point. Deesca looks at both sides with the same care, names what each of you might be missing, and avoids picking a winner. If you only want someone to agree with you, it will disappoint you a little.</p>
+        </details>
+        <details>
+          <summary>Is this therapy?</summary>
+          <p>No. Deesca is supportive coaching and reflection, not a therapist, and it doesn't diagnose anyone. It can help you understand an argument and plan the next conversation. If you feel unsafe or are in crisis, contact your local emergency services or a qualified professional.</p>
+        </details>
+        <details>
+          <summary>What can I do for free?</summary>
+          <p>You can try one mediation, three messages with your Coach and one Red Flag Check. The Daily Reflection, mood tracking and breathing sessions stay free. Premium unlocks everything else, without limits. You'll see the price in your own currency in the app before you pay.</p>
+        </details>
+        <details>
+          <summary>How do I cancel?</summary>
+          <p>In the app, open Settings and choose Manage subscription. You can also go to iPhone Settings, tap your name, then Subscriptions. Apple handles the billing, so cancelling takes a few taps and you keep Premium until the end of the period you paid for.</p>
+        </details>
+        <details>
+          <summary>Can I delete everything?</summary>
+          <p>Yes. Go to Settings and tap Delete account. This permanently erases your account and everything in it: sessions, reflections, your Coach's memory and your partner's details.</p>
+        </details>
+        <details>
+          <summary>Which languages and devices?</summary>
+          <p>Deesca is on iPhone in English, German, Spanish, French, Italian, Portuguese and Turkish. It follows your phone's language, and you can change it in Settings.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-final glow">
+        <span class="eyebrow">Free to try on iPhone</span>
+        <h2>Finish the argument instead of repeating it.</h2>
+        <p>In English, German, Spanish, French, Italian, Portuguese and Turkish.</p>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6780991520">Download on the App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-blurb">
+        <a class="brand" href="/"><img src="/img/mark.png" alt="" width="32" height="23">Deesca</a>
+        <p>A relationship coach and mediator for couples. Both sides in, one fair plan out. Free to try on iPhone.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Deesca</h2>
+        <ul>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/relationship-mediator/">Relationship mediator app</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="https://apps.apple.com/app/id6780991520">Download on the App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Guides</h2>
+        <ul>
+          <li><a href="/guides/red-flags-in-texts/">Red flags in texts</a></li>
+          <li><a href="/guides/how-to-stop-fighting-with-your-partner/">How to stop fighting with your partner</a></li>
+          <li><a href="/guides/how-to-communicate-with-your-partner/">How to communicate with your partner without fighting</a></li>
+          <li><a href="/guides/what-to-say-after-a-fight/">What to say after a fight with your partner</a></li>
+          <li><a href="/guides/do-we-need-couples-counseling/">Do we need couples counseling? 8 signs</a></li>
+          <li><a href="/guides/ai-relationship-advice/">AI relationship advice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Help</h2>
+        <ul>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+          <li><a href="mailto:deescaapp@gmail.com">deescaapp@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Deesca offers supportive, constructive relationship coaching and reflection. It is not a substitute for professional legal advice or psychological therapy, and its insights are estimates meant to help you reflect, not verdicts.</p>
+      <p>© 2026 Deesca</p>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
