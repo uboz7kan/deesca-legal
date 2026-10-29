@@ -107,6 +107,13 @@
   .card h3 { margin: 0 0 6px; font-size: 18px; }
   .card p { margin: 0; color: var(--ink-soft); font-size: 15px; }
 
+  .about { padding: 56px 0; border-top: 1px solid var(--rule); }
+  .about .text { max-width: 640px; }
+  .about h2 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.8px; margin: 12px 0 18px; font-weight: 800; }
+  .about p { color: var(--ink-soft); font-size: 17px; margin: 0 0 16px; }
+  .about .sign { color: var(--ink); font-weight: 600; margin-top: 24px; }
+  .about .contact { font-size: 15px; color: var(--ink-faint); }
+
   .faq { padding: 56px 0; border-top: 1px solid var(--rule); }
   .faq h2 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.8px; margin: 0 0 20px; font-weight: 800; }
   .faq .list { display: grid; gap: 10px; max-width: 760px; }
@@ -195,6 +202,22 @@
       </div>
     </section>
 
+    <!-- The founder's own words, approved by the founder on 2026-10-29. Don't polish it into
+         marketing copy, and don't name the Coach or Mediator here: the sections above
+         already do, and this has to read as a person, not a pitch. -->
+    <section class="about" id="about">
+      <div class="text">
+        <span class="kicker">About</span>
+        <h2>Why Deesca exists</h2>
+        <p>There are moments in every relationship when you can't make the other person understand you. You feel stuck. You want to fix it, but in that moment you can't step outside of it. What you need is someone who sees both sides without taking one.</p>
+        <p>Those moments are hard to share. Friends pick a side, family worries, and some things you'd rather not say out loud at all.</p>
+        <p>And sometimes it isn't about one fight. You just need someone who knows the whole story. Someone you can tell everything to, without starting from the beginning or worrying how it sounds.</p>
+        <p>I built Deesca because I've been there, more times than I'd like. It's the calm third voice I wished I'd had: one that listens to both of you when you're stuck, and remembers your story when you just need to talk.</p>
+        <p class="sign">— Utku, founder</p>
+        <p class="contact">Questions or feedback? Write to me at <a href="mailto:deescaapp@gmail.com">deescaapp@gmail.com</a>.</p>
+      </div>
+    </section>
+
     <!-- Keep these answers in step with the FAQPage JSON-LD at the bottom of the page
          and with privacy/. Nothing here may promise more than the policy does: no
          end-to-end encryption, no zero retention. Prices stay in the app (local
@@ -254,6 +277,7 @@
 
   <footer>
     <nav>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="support/">Support</a>
       <a href="privacy/">Privacy Policy</a>
