@@ -31,17 +31,17 @@
     <a class="back" href="../">← Legal</a>
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: August 4, 2026. Operated by Deesca, an independent developer ("we", "us"). Contact: deescaapp@gmail.com.</p>
+      <p class="updated">Last updated: November 2, 2026. Operated by Deesca, an independent developer ("we", "us"). Contact: deescaapp@gmail.com.</p>
 
       <h2>Who we are</h2>
       <p>Deesca is a mobile app that helps couples move from conflict to clarity using AI-assisted mediation, coaching, and reflection.</p>
 
       <h2>Data we collect</h2>
       <ul>
-        <li><strong>Account:</strong> your email address (passwordless sign-in) and, if you choose, Sign in with Apple identifiers.</li>
-        <li><strong>You provide:</strong> your name and your partner's name/details, relationship status, onboarding answers, the text of arguments and reflections you enter, screenshots you upload, and voice recordings you make.</li>
+        <li><strong>Account:</strong> when you first open the app we create an account with a random identifier and no email. If you choose to link it, we also store your Sign in with Apple identifier or your email address (passwordless sign-in).</li>
+        <li><strong>You provide:</strong> your name and your partner's name/details, relationship status, onboarding answers (including how you heard about Deesca), the text of arguments and reflections you enter, screenshots you upload, and voice recordings you make.</li>
         <li><strong>Generated:</strong> AI analyses (mediation reports, cooldown reports, red-flag analyses), a per-user "relationship memory" summary, mood/journal entries, and usage counts.</li>
-        <li><strong>Automatic:</strong> basic device/diagnostic data and, if enabled, crash logs.</li>
+        <li><strong>Automatic:</strong> basic device/diagnostic data, crash reports, and product-usage events (for example, that a screen was opened or a plan was selected), tied to your random account identifier. These never include the text you write, transcripts, screenshots, names, or your email address.</li>
         <li><strong>Purchases:</strong> subscription status via Apple/RevenueCat. We never receive your full payment-card details.</li>
       </ul>
 
@@ -65,6 +65,8 @@
       <ul>
         <li><strong>Supabase</strong> — our own backend: database, authentication, storage, and hosting (your rows protected by row-level security).</li>
         <li><strong>RevenueCat + Apple</strong> — subscription management. We never receive your full payment-card details.</li>
+        <li><strong>PostHog</strong> (EU hosting) — product-usage analytics, so we can see which parts of the app work and where people get stuck.</li>
+        <li><strong>Sentry</strong> (EU hosting) — crash and error reports, so we can fix what breaks.</li>
       </ul>
 
       <h2>Storage, security, retention</h2>
@@ -79,7 +81,7 @@
       </ul>
 
       <h2>Children</h2>
-      <p>Deesca is not directed to anyone under 17 (or the age of digital consent in your region).</p>
+      <p>Deesca is for people aged 16 and over. During setup we ask whether you are 16 or older, and anyone who answers that they are younger cannot continue. We do not save that answer to your account; we only record, as a usage event, that the under-16 stop was shown. If you believe someone under 16 has given us their data, contact us and we will delete it.</p>
 
       <h2>Changes</h2>
       <p>We may update this policy and will post the new date above.</p>
