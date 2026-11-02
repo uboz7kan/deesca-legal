@@ -459,3 +459,22 @@ h3 { font-size: 20px; line-height: 1.25; letter-spacing: -0.015em; font-weight: 
 .toc a:hover { color: var(--accent); text-decoration: underline; }
 @media (max-width: 560px) { .article .toc ol { columns: 1; } }
 .article .faq-list { margin: 8px 0 0; }
+
+/* Comparison guides: a scrollable table, then one card per app */
+.table-wrap { margin: 8px 0 32px; overflow-x: auto; border: 1px solid var(--rule); border-radius: 18px; background: var(--surface); -webkit-overflow-scrolling: touch; }
+.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 15px; }
+.compare th, .compare td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); color: var(--ink-soft); line-height: 1.5; }
+.compare thead th { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); background: var(--ground-2); }
+.compare tbody th { color: var(--ink); font-weight: 700; white-space: nowrap; }
+.compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
+.compare tr.ours th, .compare tr.ours td { background: var(--accent-soft); }
+.table-note { font-size: 14.5px !important; color: var(--ink-faint) !important; margin-top: -20px !important; }
+.app-entry { background: var(--surface); border: 1px solid var(--rule); border-radius: 24px; padding: 26px 26px 10px; margin: 0 0 18px; box-shadow: var(--shadow-sm); }
+.article .app-entry h3 { margin: 0 0 4px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; font-size: 22px; }
+.app-entry h3 .n { font-size: 14px; font-weight: 800; color: var(--accent); letter-spacing: .04em; }
+.app-entry .best { display: inline-block; margin: 2px 0 14px; padding: 4px 12px; border-radius: 999px; font-size: 13.5px; font-weight: 700; color: var(--accent); background: var(--accent-soft); }
+.article .app-entry p, .article .app-entry li { font-size: 16.5px; }
+.app-entry dl { display: grid; gap: 4px 16px; margin: 0 0 16px; font-size: 15.5px; }
+.app-entry dt { font-weight: 700; color: var(--ink); }
+.app-entry dd { margin: 0 0 8px; color: var(--ink-soft); }
+@media (min-width: 640px) { .app-entry dl { grid-template-columns: 150px 1fr; } .app-entry dd { margin: 0; } }
