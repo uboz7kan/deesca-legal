@@ -478,3 +478,11 @@ h3 { font-size: 20px; line-height: 1.25; letter-spacing: -0.015em; font-weight: 
 .app-entry dt { font-weight: 700; color: var(--ink); }
 .app-entry dd { margin: 0 0 8px; color: var(--ink-soft); }
 @media (min-width: 640px) { .app-entry dl { grid-template-columns: 150px 1fr; } .app-entry dd { margin: 0; } }
+
+/* Guides index sections and the author box that closes every article */
+.related .topic-h { font-size: clamp(22px, 2.6vw, 28px); margin: 48px 0 18px; }
+.related .topic-h:first-child { margin-top: 0; }
+.author-box { display: flex; gap: 16px; align-items: flex-start; margin: 48px 0 0; padding: 22px 24px; border-radius: 20px; background: var(--ground-2); border: 1px solid var(--rule); }
+.author-box img { flex-shrink: 0; margin-top: 4px; }
+.author-box b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 4px; }
+.article .author-box p { margin: 0; font-size: 15px; line-height: 1.6; }
